@@ -1,0 +1,87 @@
+[
+  {
+    "ticker": "1810.HK",
+    "source": "lihkg",
+    "post_id": "sample_1810_HK_0",
+    "timestamp_utc": "2026-10-31T12:45:21.458750Z",
+    "text": "小米 (1810) SU7 Ultra 訂單爆棚，雷軍真係神，小米汽車估值要重估！沖 32！",
+    "url": "https://sample-discussion.com/1810_HK/0",
+    "author": "Trader_321",
+    "author_followers": 0,
+    "likes": 95,
+    "dislikes": 6,
+    "replies": 35,
+    "views": 3400,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "1810.HK",
+    "source": "lihkg",
+    "post_id": "sample_1810_HK_1",
+    "timestamp_utc": "2026-11-03T01:44:07.521648Z",
+    "text": "小米 1810 升得太急，RSI 嚴重超買，短期 29 阻力大，回調先買",
+    "url": "https://sample-discussion.com/1810_HK/1",
+    "author": "Trader_189",
+    "author_followers": 0,
+    "likes": 25,
+    "dislikes": 31,
+    "replies": 15,
+    "views": 1200,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "1810.HK",
+    "source": "aastocks",
+    "post_id": "sample_1810_HK_2",
+    "timestamp_utc": "2026-11-03T20:23:53.330815Z",
+    "text": "小米手機高端化策略成功，歐洲份額穩步上升，買入信號",
+    "url": "https://sample-discussion.com/1810_HK/2",
+    "author": "Trader_554",
+    "author_followers": 0,
+    "likes": 19,
+    "dislikes": 3,
+    "replies": 7,
+    "views": 610,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "1810.HK",
+    "source": "lihkg",
+    "post_id": "sample_1810_HK_3",
+    "timestamp_utc": "2026-10-31T01:50:14.505131Z",
+    "text": "雷總發佈會太燃了，生態鏈無敵，堅持長揸小米！",
+    "url": "https://sample-discussion.com/1810_HK/3",
+    "author": "Trader_482",
+    "author_followers": 0,
+    "likes": 52,
+    "dislikes": 4,
+    "replies": 18,
+    "views": 1800,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "1810.HK",
+    "source": "aastocks",
+    "post_id": "sample_1810_HK_4",
+    "timestamp_utc": "2026-10-29T05:28:29.372963Z",
+    "text": "小米汽車毛利率轉正預期升溫，機構上調目標價至 30 元",
+    "url": "https://sample-discussion.com/1810_HK/4",
+    "author": "Trader_698",
+    "author_followers": 0,
+    "likes": 16,
+    "dislikes": 2,
+    "replies": 4,
+    "views": 480,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  }
+]

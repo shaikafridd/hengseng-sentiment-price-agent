@@ -1,0 +1,30 @@
+[
+  {
+    "ticker": "9988.HK",
+    "source": "exa",
+    "title": "Alibaba Group Quarterly Performance and Industry Outlook",
+    "url": "https://financial-news.com/9988_HK/q3-earnings",
+    "published_date_utc": "2026-11-04T13:18:17.892662Z",
+    "text": "Alibaba Group (9988.HK) reports strong operational progress, resilient margins, and continuous investment in technological innovation amidst competitive market dynamics.",
+    "highlights": [
+      "Alibaba Group maintained resilient revenue growth across key strategic business units.",
+      "Analyst sentiment remains constructive with focus on cash flow and market share gains."
+    ],
+    "author": null,
+    "score": 0.88
+  },
+  {
+    "ticker": "9988.HK",
+    "source": "exa",
+    "title": "Market Commentary: Institutional Positioning in Alibaba Group",
+    "url": "https://institutional-equity.com/9988_HK/analyst-note",
+    "published_date_utc": "2026-11-01T13:18:17.892662Z",
+    "text": "Institutional asset managers reiterate positive medium-term view on Alibaba Group, citing attractive valuation multiples and solid balance sheet fundamentals.",
+    "highlights": [
+      "Cross-border capital inflows into major index components remained stable.",
+      "Support levels held firm during recent equity market consolidation."
+    ],
+    "author": null,
+    "score": 0.82
+  }
+]

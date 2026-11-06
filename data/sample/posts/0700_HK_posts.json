@@ -1,0 +1,87 @@
+[
+  {
+    "ticker": "0700.HK",
+    "source": "lihkg",
+    "post_id": "sample_0700_HK_0",
+    "timestamp_utc": "2026-11-05T06:32:15.666433Z",
+    "text": "騰訊 (0700) 業績超預期，微信生態 AI 變現能力強，目標價睇 450！支持牛軍！",
+    "url": "https://sample-discussion.com/0700_HK/0",
+    "author": "Trader_737",
+    "author_followers": 0,
+    "likes": 45,
+    "dislikes": 3,
+    "replies": 12,
+    "views": 1420,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "0700.HK",
+    "source": "lihkg",
+    "post_id": "sample_0700_HK_1",
+    "timestamp_utc": "2026-11-03T13:26:09.511299Z",
+    "text": "0700 跌穿 415 止蝕，恆指大市回調，短期唔好盲目抄底，轉看淡",
+    "url": "https://sample-discussion.com/0700_HK/1",
+    "author": "Trader_435",
+    "author_followers": 0,
+    "likes": 12,
+    "dislikes": 28,
+    "replies": 9,
+    "views": 890,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "0700.HK",
+    "source": "aastocks",
+    "post_id": "sample_0700_HK_2",
+    "timestamp_utc": "2026-10-28T14:52:53.850451Z",
+    "text": "騰訊控股手遊流水回暖，海外業務增長強勁，逢低吸納 420 支持位",
+    "url": "https://sample-discussion.com/0700_HK/2",
+    "author": "Trader_991",
+    "author_followers": 0,
+    "likes": 8,
+    "dislikes": 1,
+    "replies": 3,
+    "views": 450,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "0700.HK",
+    "source": "lihkg",
+    "post_id": "sample_0700_HK_3",
+    "timestamp_utc": "2026-10-31T02:58:43.007613Z",
+    "text": "企鵝 0700 準備破位，大行摩通升目標價至 460 元，強烈看好",
+    "url": "https://sample-discussion.com/0700_HK/3",
+    "author": "Trader_440",
+    "author_followers": 0,
+    "likes": 60,
+    "dislikes": 5,
+    "replies": 20,
+    "views": 2100,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "0700.HK",
+    "source": "aastocks",
+    "post_id": "sample_0700_HK_4",
+    "timestamp_utc": "2026-11-05T13:43:15.487326Z",
+    "text": "北水持續淨流入騰訊，長線資金買入信號明確，持股信心大增",
+    "url": "https://sample-discussion.com/0700_HK/4",
+    "author": "Trader_875",
+    "author_followers": 0,
+    "likes": 15,
+    "dislikes": 2,
+    "replies": 5,
+    "views": 670,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "actorSpecification": 1,
+  "name": "lihkg-scraper",
+  "title": "LIHKG Finance Threads Scraper",
+  "description": "Scrapes LIHKG Hong Kong finance forum threads, like/dislike counts, and replies for stock sentiment analysis.",
+  "version": "1.0.0",
+  "meta": {
+    "templateId": "project_cheerio_crawler_js"
+  },
+  "input": "./input_schema.json"
+}

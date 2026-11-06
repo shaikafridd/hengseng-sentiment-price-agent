@@ -1,0 +1,87 @@
+[
+  {
+    "ticker": "3690.HK",
+    "source": "lihkg",
+    "post_id": "sample_3690_HK_0",
+    "timestamp_utc": "2026-10-31T00:13:18.967979Z",
+    "text": "美團 (3690) 外賣業務穩健，KeeTa 在香港拓展順利，現價 150 穩守支持",
+    "url": "https://sample-discussion.com/3690_HK/0",
+    "author": "Trader_970",
+    "author_followers": 0,
+    "likes": 34,
+    "dislikes": 5,
+    "replies": 8,
+    "views": 980,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "3690.HK",
+    "source": "lihkg",
+    "post_id": "sample_3690_HK_1",
+    "timestamp_utc": "2026-11-05T05:10:09.657693Z",
+    "text": "美團面臨抖音本地生活競爭加劇，到店毛利率承壓，偏淡操作",
+    "url": "https://sample-discussion.com/3690_HK/1",
+    "author": "Trader_613",
+    "author_followers": 0,
+    "likes": 22,
+    "dislikes": 14,
+    "replies": 10,
+    "views": 830,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "3690.HK",
+    "source": "aastocks",
+    "post_id": "sample_3690_HK_2",
+    "timestamp_utc": "2026-11-05T10:45:33.111021Z",
+    "text": "美團閃購與即時零售增長迅猛，客單價提升，維持買入",
+    "url": "https://sample-discussion.com/3690_HK/2",
+    "author": "Trader_310",
+    "author_followers": 0,
+    "likes": 12,
+    "dislikes": 1,
+    "replies": 3,
+    "views": 390,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "3690.HK",
+    "source": "lihkg",
+    "post_id": "sample_3690_HK_3",
+    "timestamp_utc": "2026-10-29T09:32:38.042188Z",
+    "text": "美團 145 跌唔落，雙底成型，目標反彈 165",
+    "url": "https://sample-discussion.com/3690_HK/3",
+    "author": "Trader_693",
+    "author_followers": 0,
+    "likes": 41,
+    "dislikes": 7,
+    "replies": 14,
+    "views": 1340,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "3690.HK",
+    "source": "aastocks",
+    "post_id": "sample_3690_HK_4",
+    "timestamp_utc": "2026-11-02T20:32:15.922767Z",
+    "text": "南向資金持續增持美團，成交活躍度高居榜首",
+    "url": "https://sample-discussion.com/3690_HK/4",
+    "author": "Trader_239",
+    "author_followers": 0,
+    "likes": 17,
+    "dislikes": 3,
+    "replies": 5,
+    "views": 510,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  }
+]

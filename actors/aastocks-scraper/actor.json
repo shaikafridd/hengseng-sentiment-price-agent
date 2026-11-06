@@ -1,0 +1,7 @@
+{
+  "actorSpecification": 1,
+  "name": "aastocks-scraper",
+  "title": "AAStocks Stock Forum & Retail Discussion Scraper",
+  "description": "Scrapes retail trader sentiment and comments from AAStocks Hong Kong equity portal.",
+  "version": "1.0.0"
+}

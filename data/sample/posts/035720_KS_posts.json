@@ -1,0 +1,87 @@
+[
+  {
+    "ticker": "035720.KS",
+    "source": "naver_finance",
+    "post_id": "sample_035720_KS_0",
+    "timestamp_utc": "2026-10-29T11:16:31.102302Z",
+    "text": "카카오 (035720) 카카오톡 개편 효과와 AI 에이전트 카나나 기대감으로 주가 반등 시도",
+    "url": "https://sample-discussion.com/035720_KS/0",
+    "author": "Trader_632",
+    "author_followers": 0,
+    "likes": 62,
+    "dislikes": 9,
+    "replies": 22,
+    "views": 2300,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "035720.KS",
+    "source": "naver_finance",
+    "post_id": "sample_035720_KS_1",
+    "timestamp_utc": "2026-11-03T12:32:33.188597Z",
+    "text": "사법 리스크 여진 남아있으나 38,000원 강력 지지선 형성 중, 저평가 구간",
+    "url": "https://sample-discussion.com/035720_KS/1",
+    "author": "Trader_340",
+    "author_followers": 0,
+    "likes": 38,
+    "dislikes": 14,
+    "replies": 15,
+    "views": 1450,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "035720.KS",
+    "source": "telegram",
+    "post_id": "sample_035720_KS_2",
+    "timestamp_utc": "2026-11-02T11:58:53.282314Z",
+    "text": "카카오 그룹 경영 쇄신 가시화, 비핵심 자산 매각으로 재무구조 대폭 개선",
+    "url": "https://sample-discussion.com/035720_KS/2",
+    "author": "Trader_189",
+    "author_followers": 0,
+    "likes": 45,
+    "dislikes": 5,
+    "replies": 9,
+    "views": 1300,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "035720.KS",
+    "source": "naver_finance",
+    "post_id": "sample_035720_KS_3",
+    "timestamp_utc": "2026-11-05T07:50:47.272940Z",
+    "text": "카카오페이 카카오뱅크 실적 호조 연결 반영, 바닥 탈출 신호",
+    "url": "https://sample-discussion.com/035720_KS/3",
+    "author": "Trader_788",
+    "author_followers": 0,
+    "likes": 51,
+    "dislikes": 8,
+    "replies": 16,
+    "views": 1700,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "035720.KS",
+    "source": "telegram",
+    "post_id": "sample_035720_KS_4",
+    "timestamp_utc": "2026-10-29T01:24:46.351143Z",
+    "text": "카카오 AI 서비스 상용화 본격화 전망, 중장기 매수 관점",
+    "url": "https://sample-discussion.com/035720_KS/4",
+    "author": "Trader_407",
+    "author_followers": 0,
+    "likes": 39,
+    "dislikes": 4,
+    "replies": 6,
+    "views": 1150,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  }
+]

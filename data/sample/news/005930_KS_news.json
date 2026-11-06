@@ -1,0 +1,30 @@
+[
+  {
+    "ticker": "005930.KS",
+    "source": "exa",
+    "title": "Samsung Electronics Quarterly Performance and Industry Outlook",
+    "url": "https://financial-news.com/005930_KS/q3-earnings",
+    "published_date_utc": "2026-11-04T13:18:17.892662Z",
+    "text": "Samsung Electronics (005930.KS) reports strong operational progress, resilient margins, and continuous investment in technological innovation amidst competitive market dynamics.",
+    "highlights": [
+      "Samsung Electronics maintained resilient revenue growth across key strategic business units.",
+      "Analyst sentiment remains constructive with focus on cash flow and market share gains."
+    ],
+    "author": null,
+    "score": 0.88
+  },
+  {
+    "ticker": "005930.KS",
+    "source": "exa",
+    "title": "Market Commentary: Institutional Positioning in Samsung Electronics",
+    "url": "https://institutional-equity.com/005930_KS/analyst-note",
+    "published_date_utc": "2026-11-01T13:18:17.892662Z",
+    "text": "Institutional asset managers reiterate positive medium-term view on Samsung Electronics, citing attractive valuation multiples and solid balance sheet fundamentals.",
+    "highlights": [
+      "Cross-border capital inflows into major index components remained stable.",
+      "Support levels held firm during recent equity market consolidation."
+    ],
+    "author": null,
+    "score": 0.82
+  }
+]

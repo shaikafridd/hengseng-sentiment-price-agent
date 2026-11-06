@@ -1,0 +1,87 @@
+[
+  {
+    "ticker": "373220.KS",
+    "source": "naver_finance",
+    "post_id": "sample_373220_KS_0",
+    "timestamp_utc": "2026-10-31T09:22:27.533554Z",
+    "text": "LG에너지솔루션 (373220) 미국 IRA 보조금 수혜 확대 및 벤츠 등 대규모 수주 릴레이",
+    "url": "https://sample-discussion.com/373220_KS/0",
+    "author": "Trader_908",
+    "author_followers": 0,
+    "likes": 85,
+    "dislikes": 11,
+    "replies": 27,
+    "views": 3100,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "373220.KS",
+    "source": "naver_finance",
+    "post_id": "sample_373220_KS_1",
+    "timestamp_utc": "2026-10-30T12:56:55.959365Z",
+    "text": "전기차 캐즘 장기화로 가동률 부담 있으나 31만원 바닥 지지력 탄탄",
+    "url": "https://sample-discussion.com/373220_KS/1",
+    "author": "Trader_907",
+    "author_followers": 0,
+    "likes": 31,
+    "dislikes": 22,
+    "replies": 14,
+    "views": 1500,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "373220.KS",
+    "source": "telegram",
+    "post_id": "sample_373220_KS_2",
+    "timestamp_utc": "2026-11-06T08:58:30.050563Z",
+    "text": "LG엔솔 4680 배터리 양산 가시권, 테슬라 공급 본격화 기대감",
+    "url": "https://sample-discussion.com/373220_KS/2",
+    "author": "Trader_643",
+    "author_followers": 0,
+    "likes": 78,
+    "dislikes": 6,
+    "replies": 19,
+    "views": 2400,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "373220.KS",
+    "source": "naver_finance",
+    "post_id": "sample_373220_KS_3",
+    "timestamp_utc": "2026-11-01T02:08:27.595478Z",
+    "text": "2차전지 섹터 저점 통과 신호 포착, 엔솔 주도 반등세 시작",
+    "url": "https://sample-discussion.com/373220_KS/3",
+    "author": "Trader_863",
+    "author_followers": 0,
+    "likes": 69,
+    "dislikes": 10,
+    "replies": 20,
+    "views": 2200,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "373220.KS",
+    "source": "telegram",
+    "post_id": "sample_373220_KS_4",
+    "timestamp_utc": "2026-10-31T12:36:23.913453Z",
+    "text": "글로벌 OEM과의 ESS 배터리 공급 계약 확대, 사업 포트폴리오 다변화 긍정적",
+    "url": "https://sample-discussion.com/373220_KS/4",
+    "author": "Trader_700",
+    "author_followers": 0,
+    "likes": 52,
+    "dislikes": 4,
+    "replies": 10,
+    "views": 1650,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  }
+]

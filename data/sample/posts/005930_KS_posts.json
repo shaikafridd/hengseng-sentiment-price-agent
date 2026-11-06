@@ -1,0 +1,87 @@
+[
+  {
+    "ticker": "005930.KS",
+    "source": "naver_finance",
+    "post_id": "sample_005930_KS_0",
+    "timestamp_utc": "2026-11-03T20:45:51.117203Z",
+    "text": "삼성전자 (005930) HBM3E 엔비디아 퀄테스트 통과 기대감 고조, 20만전자 가자! 풀매수",
+    "url": "https://sample-discussion.com/005930_KS/0",
+    "author": "Trader_112",
+    "author_followers": 0,
+    "likes": 120,
+    "dislikes": 15,
+    "replies": 45,
+    "views": 4500,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "005930.KS",
+    "source": "naver_finance",
+    "post_id": "sample_005930_KS_1",
+    "timestamp_utc": "2026-11-01T06:02:15.234817Z",
+    "text": "삼전 외인 매도세 지속, 18만원 지지선 깨지면 17만원대까지 열려있음 손절 고려",
+    "url": "https://sample-discussion.com/005930_KS/1",
+    "author": "Trader_197",
+    "author_followers": 0,
+    "likes": 40,
+    "dislikes": 85,
+    "replies": 30,
+    "views": 2800,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "005930.KS",
+    "source": "telegram",
+    "post_id": "sample_005930_KS_2",
+    "timestamp_utc": "2026-11-03T13:52:16.141957Z",
+    "text": "여의도 찌라시: 삼성전자 평택 라인 가동률 상향 및 파운드리 대형 고객사 수주 임박",
+    "url": "https://sample-discussion.com/005930_KS/2",
+    "author": "Trader_915",
+    "author_followers": 0,
+    "likes": 65,
+    "dislikes": 5,
+    "replies": 12,
+    "views": 1900,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "005930.KS",
+    "source": "naver_finance",
+    "post_id": "sample_005930_KS_3",
+    "timestamp_utc": "2026-11-05T14:20:39.791347Z",
+    "text": "외국인 기관 쌍끌이 순매수 전환! 삼전 바닥 확인했다 이제 반등뿐",
+    "url": "https://sample-discussion.com/005930_KS/3",
+    "author": "Trader_671",
+    "author_followers": 0,
+    "likes": 88,
+    "dislikes": 12,
+    "replies": 28,
+    "views": 3200,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "005930.KS",
+    "source": "telegram",
+    "post_id": "sample_005930_KS_4",
+    "timestamp_utc": "2026-11-02T14:55:08.410840Z",
+    "text": "삼성전자 기술 경쟁력 회복 본격화, 목표주가 230,000원 유지",
+    "url": "https://sample-discussion.com/005930_KS/4",
+    "author": "Trader_248",
+    "author_followers": 0,
+    "likes": 55,
+    "dislikes": 4,
+    "replies": 10,
+    "views": 1600,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "actorSpecification": 1,
+  "name": "naver-toron-scraper",
+  "title": "Naver Finance Jongmok Toronsil Scraper",
+  "description": "Scrapes Naver Finance retail investor message boards (종목토론실) for Korean equities, extracting views, upvotes, and comments.",
+  "version": "1.0.0"
+}

@@ -1,0 +1,87 @@
+[
+  {
+    "ticker": "0005.HK",
+    "source": "lihkg",
+    "post_id": "sample_0005_HK_0",
+    "timestamp_utc": "2026-11-05T05:20:00.072180Z",
+    "text": "滙豐 (0005) 宣佈架構重組，簡化營運節省成本，大笨象起飛！",
+    "url": "https://sample-discussion.com/0005_HK/0",
+    "author": "Trader_918",
+    "author_followers": 0,
+    "likes": 42,
+    "dislikes": 4,
+    "replies": 12,
+    "views": 1290,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "0005.HK",
+    "source": "aastocks",
+    "post_id": "sample_0005_HK_1",
+    "timestamp_utc": "2026-11-02T01:53:12.810535Z",
+    "text": "滙控高息回購支撐股價，防守力極強，退休收息首選 70 元支持",
+    "url": "https://sample-discussion.com/0005_HK/1",
+    "author": "Trader_649",
+    "author_followers": 0,
+    "likes": 28,
+    "dislikes": 2,
+    "replies": 6,
+    "views": 850,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "0005.HK",
+    "source": "lihkg",
+    "post_id": "sample_0005_HK_2",
+    "timestamp_utc": "2026-10-28T13:11:33.121378Z",
+    "text": "減息週期降臨，銀行淨息差 NIM 面臨收窄壓力，滙豐短期欠缺向上動力",
+    "url": "https://sample-discussion.com/0005_HK/2",
+    "author": "Trader_667",
+    "author_followers": 0,
+    "likes": 15,
+    "dislikes": 18,
+    "replies": 7,
+    "views": 720,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "0005.HK",
+    "source": "aastocks",
+    "post_id": "sample_0005_HK_3",
+    "timestamp_utc": "2026-10-31T11:26:13.206016Z",
+    "text": "滙豐第三季財報勝預期，宣佈新一輪 30 億美元股份回購",
+    "url": "https://sample-discussion.com/0005_HK/3",
+    "author": "Trader_458",
+    "author_followers": 0,
+    "likes": 33,
+    "dislikes": 1,
+    "replies": 9,
+    "views": 990,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  },
+  {
+    "ticker": "0005.HK",
+    "source": "lihkg",
+    "post_id": "sample_0005_HK_4",
+    "timestamp_utc": "2026-11-01T13:57:14.451896Z",
+    "text": "大笨象 0005 穩如泰山，恆指跌佢都唔跌，防守神股",
+    "url": "https://sample-discussion.com/0005_HK/4",
+    "author": "Trader_433",
+    "author_followers": 0,
+    "likes": 39,
+    "dislikes": 3,
+    "replies": 10,
+    "views": 1100,
+    "raw_metadata": {
+      "is_sample": true
+    }
+  }
+]
