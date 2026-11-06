@@ -1,0 +1,67 @@
+# ==============================================================================
+# Ingestion Sources & Apify Actors Configuration
+# ==============================================================================
+
+sources:
+  hkex_social_1:
+    name: "LIHKG (Hong Kong Forum)"
+    platform: "lihkg"
+    exchange: "HKEX"
+    apify_actor_id: "claude_code_reviewer/lihkg-scraper"
+    fallback_custom_actor: "actors/lihkg-scraper"
+    description: "Scrapes LIHKG financial threads, posts, replies, and like/dislike counts."
+    default_params:
+      limit_per_ticker: 50
+      category_id: "1" # Financial/Current Affairs
+      days_back: 10
+
+  hkex_social_2:
+    name: "AAStocks Forum & Financial Community"
+    platform: "aastocks"
+    exchange: "HKEX"
+    apify_actor_id: "apify/cheerio-scraper"
+    fallback_custom_actor: "actors/aastocks-scraper"
+    description: "Extracts retail trader comments, stock sentiment, and discussion boards from AAStocks."
+    default_params:
+      max_items_per_ticker: 50
+      days_back: 10
+
+  krx_social_1:
+    name: "Naver Finance Discussion Boards (jongmok toronsil)"
+    platform: "naver_finance"
+    exchange: "KRX"
+    apify_actor_id: "apify/cheerio-scraper"
+    fallback_custom_actor: "actors/naver-toron-scraper"
+    description: "Scrapes Naver Finance Jongmok Toronsil (종목토론실) retail investor posts, upvotes, downvotes, and views."
+    base_url: "https://finance.naver.com/item/board.naver?code={raw_code}"
+    default_params:
+      max_pages_per_ticker: 5
+      days_back: 10
+
+  krx_social_2:
+    name: "Telegram Public Financial Channels"
+    platform: "telegram"
+    exchange: "KRX"
+    apify_actor_id: "curious_coder/telegram-scraper"
+    fallback_custom_actor: "tri_angle/telegram-scraper"
+    description: "Scrapes public Korean stock market channels and message histories."
+    channels:
+      - "https://t.me/yeouidostock"
+      - "https://t.me/krxmarketnews"
+    default_params:
+      limit_per_channel: 60
+      days_back: 10
+
+  news_source:
+    name: "Exa AI News Search"
+    platform: "exa"
+    endpoint: "https://api.exa.ai/search"
+    description: "Semantic search for authoritative recent corporate news, earnings releases, and analyst coverage."
+    default_params:
+      use_autoprompt: true
+      num_results_per_ticker: 10
+      days_back: 10
+      type: "neural"
+      contents:
+        text: true
+        highlights: true

@@ -1,0 +1,113 @@
+# ==============================================================================
+# Asset Universe Configuration
+# Exchanges: HKEX (Hong Kong Stock Exchange) & KRX (Korea Exchange)
+# ==============================================================================
+
+exchanges:
+  HKEX:
+    name: "Hong Kong Stock Exchange"
+    timezone: "Asia/Hong_Kong" # UTC+8
+    trading_hours:
+      morning_open: "09:30"
+      morning_close: "12:00"
+      afternoon_open: "13:00"
+      afternoon_close: "16:00"
+    currency: "HKD"
+    assets:
+      - ticker: "0700.HK"
+        raw_code: "0700"
+        name: "Tencent Holdings"
+        name_local: "騰訊控股"
+        cashtags: ["$0700.HK", "#0700", "$0700"]
+        keywords_en: ["Tencent", "0700.HK", "WeChat"]
+        keywords_local: ["騰訊", "腾讯", "企鵝", "騰訊控股"]
+        sector: "Technology / Communication Services"
+
+      - ticker: "9988.HK"
+        raw_code: "9988"
+        name: "Alibaba Group"
+        name_local: "阿里巴巴"
+        cashtags: ["$9988.HK", "#9988", "$9988", "$BABA"]
+        keywords_en: ["Alibaba", "9988.HK", "Aliyun", "Taobao"]
+        keywords_local: ["阿里巴巴", "阿里", "淘寶", "巴巴"]
+        sector: "Consumer Discretionary / E-Commerce"
+
+      - ticker: "1810.HK"
+        raw_code: "1810"
+        name: "Xiaomi Corporation"
+        name_local: "小米集團"
+        cashtags: ["$1810.HK", "#1810", "$1810"]
+        keywords_en: ["Xiaomi", "1810.HK", "Lei Jun", "Xiaomi EV"]
+        keywords_local: ["小米", "小米集團", "雷軍", "小愛"]
+        sector: "Consumer Electronics / Hardware"
+
+      - ticker: "3690.HK"
+        raw_code: "3690"
+        name: "Meituan"
+        name_local: "美團"
+        cashtags: ["$3690.HK", "#3690", "$3690"]
+        keywords_en: ["Meituan", "3690.HK", "KeeTa"]
+        keywords_local: ["美團", "美团", "袋鼠"]
+        sector: "Consumer Services / Food Delivery"
+
+      - ticker: "0005.HK"
+        raw_code: "0005"
+        name: "HSBC Holdings"
+        name_local: "滙豐控股"
+        cashtags: ["$0005.HK", "#0005", "$0005"]
+        keywords_en: ["HSBC", "0005.HK", "Hongkong and Shanghai Banking Corp"]
+        keywords_local: ["滙豐", "汇丰", "大笨象", "滙豐控股"]
+        sector: "Financials / Banking"
+
+  KRX:
+    name: "Korea Exchange"
+    timezone: "Asia/Seoul" # UTC+9
+    trading_hours:
+      open: "09:00"
+      close: "15:30"
+    currency: "KRW"
+    assets:
+      - ticker: "005930.KS"
+        raw_code: "005930"
+        name: "Samsung Electronics"
+        name_local: "삼성전자"
+        cashtags: ["$005930.KS", "#005930", "$005930"]
+        keywords_en: ["Samsung Electronics", "005930.KS", "Samsung"]
+        keywords_local: ["삼성전자", "삼전", "이재용", "반도체"]
+        sector: "Information Technology / Semiconductor"
+
+      - ticker: "000660.KS"
+        raw_code: "000660"
+        name: "SK Hynix"
+        name_local: "SK하이닉스"
+        cashtags: ["$000660.KS", "#000660", "$000660"]
+        keywords_en: ["SK Hynix", "000660.KS", "HBM"]
+        keywords_local: ["SK하이닉스", "하닉", "하이닉스", "HBM"]
+        sector: "Information Technology / Memory Semiconductor"
+
+      - ticker: "035420.KS"
+        raw_code: "035420"
+        name: "NAVER Corporation"
+        name_local: "네이버"
+        cashtags: ["$035420.KS", "#035420", "$035420"]
+        keywords_en: ["NAVER", "035420.KS", "Naver Cloud"]
+        keywords_local: ["네이버", "NAVER", "라인", "하이퍼클로바"]
+        sector: "Communication Services / Internet"
+
+      - ticker: "035720.KS"
+        raw_code: "035720"
+        name: "Kakao Corporation"
+        name_local: "카카오"
+        cashtags: ["$035720.KS", "#035720", "$035720"]
+        keywords_en: ["Kakao", "035720.KS", "KakaoTalk"]
+        keywords_local: ["카카오", "카톡", "카카오뱅크", "카카오페이"]
+        sector: "Communication Services / Mobile Platform"
+
+      - ticker: "373220.KS"
+        raw_code: "373220"
+        name: "LG Energy Solution"
+        name_local: "LG에너지솔루션"
+        cashtags: ["$373220.KS", "#373220", "$373220"]
+        keywords_en: ["LG Energy Solution", "373220.KS", "LG EnSol", "EV Battery"]
+        keywords_local: ["LG에너지솔루션", "엔솔", "LG엔솔", "2차전지", "배터리"]
+        sector: "Industrials / Clean Energy Battery"
