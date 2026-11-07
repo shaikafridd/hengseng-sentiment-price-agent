@@ -58,16 +58,13 @@ class ExaNewsClient:
             return []
 
         # 3. Construct semantic query
-        # E.g. "Tencent 0700.HK earnings financial results quarterly report stock"
-        start_date = (datetime.now(timezone.utc) - timedelta(days=days_back)).strftime("%Y-%m-%dT00:00:00.000Z")
         query = f"{asset.name} ({asset.ticker}) latest financial news earnings performance stock analysis"
 
         payload = {
             "query": query,
-            "type": "neural",
+            "type": "auto",
             "useAutoprompt": True,
             "numResults": num_results,
-            "startPublishedDate": start_date,
             "contents": {
                 "text": {"maxCharacters": 1500},
                 "highlights": {"numSentences": 3}
