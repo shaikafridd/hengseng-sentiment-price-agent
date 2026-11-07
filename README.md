@@ -10,7 +10,6 @@
 > **Assessment Submission:** AI Agents Developer Internship — CrowdWisdomTrading  
 > **Candidate:** Shaik Afrid ([LinkedIn Profile](https://www.linkedin.com/in/shaik-afrid-707656365))  
 > **Evaluator:** Gilad (`gilad@crowdwisdomtrading.com`)  
-> **Hard Deadline:** 13 November 2026 (Submitted Ahead of Schedule)  
 > **Live Dashboard:** [View Interactive Plotly Report](https://shaikafridd.github.io/hengseng-sentiment-price-agent/)
 
 ---
