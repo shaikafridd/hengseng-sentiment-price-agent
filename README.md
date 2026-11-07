@@ -11,7 +11,7 @@
 > **Candidate:** Shaik Afrid ([LinkedIn Profile](https://www.linkedin.com/in/shaik-afrid-707656365))  
 > **Evaluator:** Gilad (`gilad@crowdwisdomtrading.com`)  
 > **Hard Deadline:** 13 November 2026 (Submitted Ahead of Schedule)  
-> **Live Dashboard:** [View Interactive Plotly Report](https://YOUR_GITHUB_USERNAME.github.io/hengseng-sentiment-price-agent/)
+> **Live Dashboard:** [View Interactive Plotly Report](https://shaikafridd.github.io/hengseng-sentiment-price-agent/)
 
 ---
 
@@ -133,8 +133,8 @@ $$\text{CI} = \frac{\hat{p} + \frac{z^2}{2n} \pm z\sqrt{\frac{\hat{p}(1-\hat{p})
 
 ### Step 1: Clone and Setup Environment
 ```bash
-git clone <REPO_URL>
-cd "internship demo"
+git clone https://github.com/shaikafridd/hengseng-sentiment-price-agent.git
+cd "hengseng-sentiment-price-agent"
 
 # Python 3.11+ required
 python -m venv venv
@@ -239,8 +239,8 @@ Hi Gilad,
 
 Please find my submission for the trading sentiment agent assessment (also submitted via Internshala, if applicable).
 
-1. Repository: <GITHUB_REPO_LINK>
-2. Live Interactive Report (Plotly): https://<YOUR_GITHUB_USERNAME>.github.io/hengseng-sentiment-price-agent/
+1. Repository: https://github.com/shaikafridd/hengseng-sentiment-price-agent
+2. Live Interactive Report (Plotly): https://shaikafridd.github.io/hengseng-sentiment-price-agent/
 3. Apify token (free tier, dedicated): <APIFY_TOKEN>
    Actor IDs used: claude_code_reviewer/lihkg-scraper (LIHKG), apify/cheerio-scraper (AAStocks & Naver Toronsil), curious_coder/telegram-scraper (Telegram). Custom actors also included in /actors.
 4. Exa API key (free tier, dedicated): <EXA_API_KEY>
