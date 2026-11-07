@@ -297,8 +297,18 @@ def generate_html_report(
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>HengSeng & KRX Sentiment-Driven Price Prediction Agent</h1>
-            <p>Hiring Assessment for AI Agents Developer Internship &bull; CrowdWisdomTrading &bull; Evaluator: Gilad</p>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <h1>HengSeng & KRX Sentiment-Driven Price Prediction Agent</h1>
+                    <p>Hiring Assessment for AI Agents Developer Internship &bull; CrowdWisdomTrading &bull; Evaluator: Gilad</p>
+                </div>
+                <div>
+                    <a href="report.pdf" download style="display: inline-flex; align-items: center; gap: 0.5rem; background: #2563eb; color: white; padding: 0.65rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.85rem; box-shadow: 0 4px 6px -1px rgba(37,99,235,0.3);">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download Executive PDF
+                    </a>
+                </div>
+            </div>
             <div class="meta-strip">
                 <div>Candidate: <b>Shaik Afrid</b></div>
                 <div>Generated: <b>{generated_at}</b></div>

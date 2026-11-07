@@ -11,9 +11,13 @@ def test_report_files_generation():
 
     html_file = config.reports_dir / "report.html"
     pdf_file = config.reports_dir / "report.pdf"
+    docs_html = config.base_dir / "docs" / "index.html"
+    docs_pdf = config.base_dir / "docs" / "report.pdf"
 
     assert html_file.exists(), "HTML report was not generated"
     assert pdf_file.exists(), "PDF report was not generated"
+    assert docs_html.exists(), "GitHub Pages docs/index.html was not mirrored"
+    assert docs_pdf.exists(), "GitHub Pages docs/report.pdf was not mirrored"
     assert html_file.stat().st_size > 10000, "HTML report appears truncated or incomplete"
     assert pdf_file.stat().st_size > 2000, "PDF report appears truncated"
 

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HengSeng Sentiment Price Prediction Agent - Executive Intelligence Report</title>
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --border: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 2rem 1.5rem;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 2.2rem 2.5rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.15);
+        }
+        .header h1 { margin: 0 0 0.5rem 0; font-size: 1.85rem; letter-spacing: -0.02em; }
+        .header p { margin: 0; color: #94a3b8; font-size: 0.95rem; }
+        .meta-strip {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #cbd5e1;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 0.6rem;
+            color: #1e293b;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        th, td {
+            padding: 0.75rem 0.85rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            background: #f8fafc;
+            color: #475569;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        tr:hover { background: #f8fafc; }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 1.2rem;
+        }
+        .post-card {
+            background: #f8fafc;
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .callout-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem 1.25rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #1e3a8a;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <h1>HengSeng & KRX Sentiment-Driven Price Prediction Agent</h1>
+                    <p>Hiring Assessment for AI Agents Developer Internship &bull; CrowdWisdomTrading &bull; Evaluator: Gilad</p>
+                </div>
+                <div>
+                    <a href="report.pdf" download style="display: inline-flex; align-items: center; gap: 0.5rem; background: #2563eb; color: white; padding: 0.65rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.85rem; box-shadow: 0 4px 6px -1px rgba(37,99,235,0.3);">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download Executive PDF
+                    </a>
+                </div>
+            </div>
+            <div class="meta-strip">
+                <div>Candidate: <b>Shaik Afrid</b></div>
+                <div>Generated: <b>2026-11-07 02:43:20 UTC</b></div>
+                <div>Coverage: <b>HKEX (5 Tickers) & KRX (5 Tickers)</b></div>
+                <div>Validation: <b>Expanding-Window Walk-Forward (Zero-Leakage)</b></div>
+            </div>
+        </div>
+
+        <!-- Bubble Chart Matrix -->
+        <div class="card">
+            <h2>Market Sentiment & Discussion Velocity Overview</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+                Bubble size reflects confidence score (sample volume + source diversity + agreement). Color indicates direction (Green = Bullish, Red = Bearish, Grey = Neutral).
+            </p>
+            <div style="height:450px; width:100%;">                        <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-4.1.1.min.js" integrity="sha256-O24V1F27f8pb0glCkelh3cVHLNiHAJ5gCaVtq2aNch8=" crossorigin="anonymous"></script>                <div id="b1b90440-2a25-4a3f-8aa2-1661715d2e00" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("b1b90440-2a25-4a3f-8aa2-1661715d2e00")) {                    Plotly.newPlot(                        "b1b90440-2a25-4a3f-8aa2-1661715d2e00",                        [{"hoverinfo":"text","hovertext":["\u003cb\u003e0700.HK (Tencent Holdings)\u003c\u002fb\u003e\u003cbr\u003eSentiment: +0.69\u003cbr\u003eMentions: 5\u003cbr\u003ePosition Bias: long\u003cbr\u003eConfidence: 0.60","\u003cb\u003e1810.HK (Xiaomi Corporation)\u003c\u002fb\u003e\u003cbr\u003eSentiment: +0.55\u003cbr\u003eMentions: 5\u003cbr\u003ePosition Bias: long\u003cbr\u003eConfidence: 0.58","\u003cb\u003e3690.HK (Meituan)\u003c\u002fb\u003e\u003cbr\u003eSentiment: +0.14\u003cbr\u003eMentions: 5\u003cbr\u003ePosition Bias: long\u003cbr\u003eConfidence: 0.48","\u003cb\u003e0005.HK (HSBC Holdings)\u003c\u002fb\u003e\u003cbr\u003eSentiment: +0.01\u003cbr\u003eMentions: 5\u003cbr\u003ePosition Bias: None\u003cbr\u003eConfidence: 0.68","\u003cb\u003e9988.HK (Alibaba Group)\u003c\u002fb\u003e\u003cbr\u003eSentiment: -0.20\u003cbr\u003eMentions: 5\u003cbr\u003ePosition Bias: long\u003cbr\u003eConfidence: 0.63","\u003cb\u003e373220.KS (LG Energy Solution)\u003c\u002fb\u003e\u003cbr\u003eSentiment: +0.81\u003cbr\u003eMentions: 5\u003cbr\u003ePosition Bias: None\u003cbr\u003eConfidence: 0.60","\u003cb\u003e005930.KS (Samsung Electronics)\u003c\u002fb\u003e\u003cbr\u003eSentiment: +0.42\u003cbr\u003eMentions: 5\u003cbr\u003ePosition Bias: None\u003cbr\u003eConfidence: 0.66","\u003cb\u003e035420.KS (NAVER Corporation)\u003c\u002fb\u003e\u003cbr\u003eSentiment: +0.41\u003cbr\u003eMentions: 5\u003cbr\u003ePosition Bias: None\u003cbr\u003eConfidence: 0.66","\u003cb\u003e000660.KS (SK Hynix)\u003c\u002fb\u003e\u003cbr\u003eSentiment: +0.39\u003cbr\u003eMentions: 5\u003cbr\u003ePosition Bias: None\u003cbr\u003eConfidence: 0.58","\u003cb\u003e035720.KS (Kakao Corporation)\u003c\u002fb\u003e\u003cbr\u003eSentiment: +0.20\u003cbr\u003eMentions: 5\u003cbr\u003ePosition Bias: None\u003cbr\u003eConfidence: 0.60"],"marker":{"color":["#10b981","#10b981","#10b981","#6b7280","#ef4444","#10b981","#10b981","#10b981","#10b981","#10b981"],"line":{"color":"#1e293b","width":1.5},"opacity":0.85,"size":[36.0,35.3,31.8,38.8,37.05,36.175,37.925,37.925,35.3,36.175]},"mode":"markers+text","text":["0700.HK","1810.HK","3690.HK","0005.HK","9988.HK","373220.KS","005930.KS","035420.KS","000660.KS","035720.KS"],"textposition":"top center","x":[0.688,0.549,0.14,0.005,-0.199,0.808,0.416,0.413,0.391,0.199],"y":[5,5,5,5,5,5,5,5,5,5],"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"margin":{"l":40,"r":40,"t":50,"b":40},"xaxis":{"title":{"text":"Sentiment Score (-1 Bearish to +1 Bullish)"},"range":[-1.05,1.05],"zeroline":true,"zerolinewidth":1.5,"zerolinecolor":"#94a3b8"},"title":{"text":"\u003cb\u003eAsset Universe: Sentiment Score vs. Social Mention Volume\u003c\u002fb\u003e"},"yaxis":{"title":{"text":"10-Day Social Mentions"}},"height":450,"plot_bgcolor":"#f8fafc","paper_bgcolor":"#ffffff"},                        {"responsive": true}                    )                };            </script>        </div>
+        </div>
+
+        <!-- Exchange Rankings -->
+        <div class="card">
+            <h2>1. Hong Kong Stock Exchange (HKEX) Social Sentiment Leaderboard</h2>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">Sources: LIHKG (連登討論區) + AAStocks Stock Forum + Exa AI Curated Financial News</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">Rank</th>
+                        <th>Ticker / Asset</th>
+                        <th>Price (HKD)</th>
+                        <th>Sentiment</th>
+                        <th>Trader Bias</th>
+                        <th style="text-align: center;">Mentions (z)</th>
+                        <th style="text-align: center;">Bull/Bear</th>
+                        <th>Support / Resistance</th>
+                        <th style="text-align: center;">Confidence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr>
+                <td style="font-weight: 600; text-align: center;">#1</td>
+                <td><b>0700.HK</b><br><small style="color: #64748b;">Tencent Holdings</small></td>
+                <td style="font-weight: 600;">427.74</td>
+                <td><span class="badge" style="background: #dcfce7; color: #166534;">BULLISH (+0.69)</span></td>
+                <td><span class='badge' style='background: #e0e7ff; color: #3730a3;'>LONG</span></td>
+                <td style="text-align: center;">5 <small style="color: #64748b;">(z=-1.0)</small></td>
+                <td style="text-align: center;">2.50</td>
+                <td style="font-size: 0.85rem;"><span style="color: #16a34a;">S:</span> 342.8, 365.8<br><span style="color: #dc2626;">R:</span> 431.4, 450.8</td>
+                <td style="text-align: center;"><b>60%</b></td>
+            </tr>
+            
+
+            <tr>
+                <td style="font-weight: 600; text-align: center;">#2</td>
+                <td><b>1810.HK</b><br><small style="color: #64748b;">Xiaomi Corporation</small></td>
+                <td style="font-weight: 600;">28.79</td>
+                <td><span class="badge" style="background: #dcfce7; color: #166534;">BULLISH (+0.55)</span></td>
+                <td><span class='badge' style='background: #e0e7ff; color: #3730a3;'>LONG</span></td>
+                <td style="text-align: center;">5 <small style="color: #64748b;">(z=-1.0)</small></td>
+                <td style="text-align: center;">4.00</td>
+                <td style="font-size: 0.85rem;"><span style="color: #16a34a;">S:</span> 26.6, 27.7<br><span style="color: #dc2626;">R:</span> 30.6, 31.2</td>
+                <td style="text-align: center;"><b>57%</b></td>
+            </tr>
+            
+
+            <tr>
+                <td style="font-weight: 600; text-align: center;">#3</td>
+                <td><b>3690.HK</b><br><small style="color: #64748b;">Meituan</small></td>
+                <td style="font-weight: 600;">124.92</td>
+                <td><span class="badge" style="background: #dcfce7; color: #166534;">BULLISH (+0.14)</span></td>
+                <td><span class='badge' style='background: #e0e7ff; color: #3730a3;'>LONG</span></td>
+                <td style="text-align: center;">5 <small style="color: #64748b;">(z=-1.0)</small></td>
+                <td style="text-align: center;">1.50</td>
+                <td style="font-size: 0.85rem;"><span style="color: #16a34a;">S:</span> 107.3, 114.0<br><span style="color: #dc2626;">R:</span> 127.8, 129.3</td>
+                <td style="text-align: center;"><b>48%</b></td>
+            </tr>
+            
+
+            <tr>
+                <td style="font-weight: 600; text-align: center;">#4</td>
+                <td><b>0005.HK</b><br><small style="color: #64748b;">HSBC Holdings</small></td>
+                <td style="font-weight: 600;">65.77</td>
+                <td><span class="badge" style="background: #f3f4f6; color: #374151;">NEUTRAL (+0.01)</span></td>
+                <td><span style='color:#9ca3af;'>None</span></td>
+                <td style="text-align: center;">5 <small style="color: #64748b;">(z=-1.0)</small></td>
+                <td style="text-align: center;">1.00</td>
+                <td style="font-size: 0.85rem;"><span style="color: #16a34a;">S:</span> 55.8, 59.0<br><span style="color: #dc2626;">R:</span> 66.4, 67.1</td>
+                <td style="text-align: center;"><b>68%</b></td>
+            </tr>
+            
+
+            <tr>
+                <td style="font-weight: 600; text-align: center;">#5</td>
+                <td><b>9988.HK</b><br><small style="color: #64748b;">Alibaba Group</small></td>
+                <td style="font-weight: 600;">119.96</td>
+                <td><span class="badge" style="background: #fee2e2; color: #991b1b;">BEARISH (-0.20)</span></td>
+                <td><span class='badge' style='background: #e0e7ff; color: #3730a3;'>LONG</span></td>
+                <td style="text-align: center;">5 <small style="color: #64748b;">(z=-1.0)</small></td>
+                <td style="text-align: center;">0.50</td>
+                <td style="font-size: 0.85rem;"><span style="color: #16a34a;">S:</span> 108.8, 114.4<br><span style="color: #dc2626;">R:</span> 127.4, 128.5</td>
+                <td style="text-align: center;"><b>63%</b></td>
+            </tr>
+            
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>2. Korea Exchange (KRX) Social Sentiment Leaderboard</h2>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">Sources: Naver Finance Jongmok Toronsil (종목토론실) + Financial Telegram Channels + Exa AI News</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">Rank</th>
+                        <th>Ticker / Asset</th>
+                        <th>Price (KRW)</th>
+                        <th>Sentiment</th>
+                        <th>Trader Bias</th>
+                        <th style="text-align: center;">Mentions (z)</th>
+                        <th style="text-align: center;">Bull/Bear</th>
+                        <th>Support / Resistance</th>
+                        <th style="text-align: center;">Confidence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr>
+                <td style="font-weight: 600; text-align: center;">#1</td>
+                <td><b>373220.KS</b><br><small style="color: #64748b;">LG Energy Solution</small></td>
+                <td style="font-weight: 600;">408,760.27</td>
+                <td><span class="badge" style="background: #dcfce7; color: #166534;">BULLISH (+0.81)</span></td>
+                <td><span style='color:#9ca3af;'>None</span></td>
+                <td style="text-align: center;">5 <small style="color: #64748b;">(z=-1.0)</small></td>
+                <td style="text-align: center;">5.00</td>
+                <td style="font-size: 0.85rem;"><span style="color: #16a34a;">S:</span> 301,365.9, 329,346.3<br><span style="color: #dc2626;">R:</span> 411,023.9, 436,740.7</td>
+                <td style="text-align: center;"><b>60%</b></td>
+            </tr>
+            
+
+            <tr>
+                <td style="font-weight: 600; text-align: center;">#2</td>
+                <td><b>005930.KS</b><br><small style="color: #64748b;">Samsung Electronics</small></td>
+                <td style="font-weight: 600;">237,076.85</td>
+                <td><span class="badge" style="background: #dcfce7; color: #166534;">BULLISH (+0.42)</span></td>
+                <td><span style='color:#9ca3af;'>None</span></td>
+                <td style="text-align: center;">5 <small style="color: #64748b;">(z=-1.0)</small></td>
+                <td style="text-align: center;">2.00</td>
+                <td style="font-size: 0.85rem;"><span style="color: #16a34a;">S:</span> 216,281.1, 224,443.3<br><span style="color: #dc2626;">R:</span> 241,704.3, 243,003.4</td>
+                <td style="text-align: center;"><b>65%</b></td>
+            </tr>
+            
+
+            <tr>
+                <td style="font-weight: 600; text-align: center;">#3</td>
+                <td><b>035420.KS</b><br><small style="color: #64748b;">NAVER Corporation</small></td>
+                <td style="font-weight: 600;">147,210.29</td>
+                <td><span class="badge" style="background: #dcfce7; color: #166534;">BULLISH (+0.41)</span></td>
+                <td><span style='color:#9ca3af;'>None</span></td>
+                <td style="text-align: center;">5 <small style="color: #64748b;">(z=-1.0)</small></td>
+                <td style="text-align: center;">3.00</td>
+                <td style="font-size: 0.85rem;"><span style="color: #16a34a;">S:</span> 138,830.4, 143,020.3<br><span style="color: #dc2626;">R:</span> 152,907.4, 153,879.3</td>
+                <td style="text-align: center;"><b>65%</b></td>
+            </tr>
+            
+
+            <tr>
+                <td style="font-weight: 600; text-align: center;">#4</td>
+                <td><b>000660.KS</b><br><small style="color: #64748b;">SK Hynix</small></td>
+                <td style="font-weight: 600;">155,801.82</td>
+                <td><span class="badge" style="background: #dcfce7; color: #166534;">BULLISH (+0.39)</span></td>
+                <td><span style='color:#9ca3af;'>None</span></td>
+                <td style="text-align: center;">5 <small style="color: #64748b;">(z=-1.0)</small></td>
+                <td style="text-align: center;">3.00</td>
+                <td style="font-size: 0.85rem;"><span style="color: #16a34a;">S:</span> 131,583.7, 143,692.8<br><span style="color: #dc2626;">R:</span> 162,671.9, 168,526.8</td>
+                <td style="text-align: center;"><b>57%</b></td>
+            </tr>
+            
+
+            <tr>
+                <td style="font-weight: 600; text-align: center;">#5</td>
+                <td><b>035720.KS</b><br><small style="color: #64748b;">Kakao Corporation</small></td>
+                <td style="font-weight: 600;">41,083.57</td>
+                <td><span class="badge" style="background: #dcfce7; color: #166534;">BULLISH (+0.20)</span></td>
+                <td><span style='color:#9ca3af;'>None</span></td>
+                <td style="text-align: center;">5 <small style="color: #64748b;">(z=-1.0)</small></td>
+                <td style="text-align: center;">1.50</td>
+                <td style="font-size: 0.85rem;"><span style="color: #16a34a;">S:</span> 34,146.4, 36,163.7<br><span style="color: #dc2626;">R:</span> 41,218.0, 41,649.6</td>
+                <td style="text-align: center;"><b>60%</b></td>
+            </tr>
+            
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Out-of-Sample Predictions Chart -->
+        <div class="card">
+            <h2>3. Walk-Forward Out-of-Sample Predictions vs. Actuals</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+                Out-of-sample prediction trajectories from expanding-window evaluation. Features at time <i>t</i> use strictly historical information available before prediction time.
+            </p>
+            <div style="height:420px; width:100%;">                            <div id="7c6196f4-7edf-4f11-b17b-3f0f56630368" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("7c6196f4-7edf-4f11-b17b-3f0f56630368")) {                    Plotly.newPlot(                        "7c6196f4-7edf-4f11-b17b-3f0f56630368",                        [{"line":{"color":"#0f172a","width":2},"mode":"lines+markers","name":"0700.HK Actual","x":["2026-08-10T13:18:17.892662000","2026-08-11T13:18:17.892662000","2026-08-12T13:18:17.892662000","2026-08-13T13:18:17.892662000","2026-08-14T13:18:17.892662000","2026-08-17T13:18:17.892662000","2026-08-18T13:18:17.892662000","2026-08-19T13:18:17.892662000","2026-08-20T13:18:17.892662000","2026-08-21T13:18:17.892662000","2026-08-24T13:18:17.892662000","2026-08-25T13:18:17.892662000","2026-08-26T13:18:17.892662000","2026-08-27T13:18:17.892662000","2026-08-28T13:18:17.892662000","2026-08-31T13:18:17.892662000","2026-09-01T13:18:17.892662000","2026-09-02T13:18:17.892662000","2026-09-03T13:18:17.892662000","2026-09-04T13:18:17.892662000","2026-09-07T13:18:17.892662000","2026-09-08T13:18:17.892662000","2026-09-09T13:18:17.892662000","2026-09-10T13:18:17.892662000","2026-09-11T13:18:17.892662000","2026-09-14T13:18:17.892662000","2026-09-15T13:18:17.892662000","2026-09-16T13:18:17.892662000","2026-09-17T13:18:17.892662000","2026-09-18T13:18:17.892662000","2026-09-21T13:18:17.892662000","2026-09-22T13:18:17.892662000","2026-09-23T13:18:17.892662000","2026-09-24T13:18:17.892662000","2026-09-25T13:18:17.892662000","2026-09-28T13:18:17.892662000","2026-09-29T13:18:17.892662000","2026-09-30T13:18:17.892662000","2026-10-01T13:18:17.892662000","2026-10-02T13:18:17.892662000","2026-10-05T13:18:17.892662000","2026-10-06T13:18:17.892662000","2026-10-07T13:18:17.892662000","2026-10-08T13:18:17.892662000","2026-10-09T13:18:17.892662000","2026-10-12T13:18:17.892662000","2026-10-13T13:18:17.892662000","2026-10-14T13:18:17.892662000","2026-10-15T13:18:17.892662000","2026-10-16T13:18:17.892662000","2026-10-19T13:18:17.892662000","2026-10-20T13:18:17.892662000","2026-10-21T13:18:17.892662000","2026-10-22T13:18:17.892662000","2026-10-23T13:18:17.892662000","2026-10-26T13:18:17.892662000","2026-10-27T13:18:17.892662000","2026-10-28T13:18:17.892662000","2026-10-29T13:18:17.892662000","2026-10-30T13:18:17.892662000","2026-11-02T13:18:17.892662000","2026-11-03T13:18:17.892662000","2026-11-04T13:18:17.892662000","2026-11-05T13:18:17.892662000"],"y":{"dtype":"f8","bdata":"jLlrCfkmd0DRItv5fq52QPOOU3QkKndA0ETY8PR9d0DBqKROQNd3QLWmeccpd3dADXGsi9sTeEDc14FzRn13QMDsnjwswHdAtFn1udq3eECad5yiI0t4QEymCkYlD3hA7MA5I0odeEAtsp3vp+h3QAN4CyQoQ3dAeAskKH5Nd0CM22gAb992QJM6AU2EFHdAliGOdXG2dkBiodY07113QJp3nKIjDXdAgnNGlPbtdkD2l92Th0d3QGaIY13cx3ZAGeJYF7fidkDaG3xhMnF3QNBE2PD0yHZATx4Wak3fdkBdbcX+sv12QBdIUPwYVHdAP8bctYTTdkCF61G4Hk12QN5xio7khXZABFYOLbKndkDiWBe30cR2QPCnxks37HZAeJyiI7mndkC1FfvL7sJ2QPRsVn2u5HZAXW3F\u002frKcdkAT8kHPZmV3QCQofoy5m3dABcWPMXced0DiWBe30Wd3QBZqTfOOAndAlPYGX5hZd0ACmggbntp3QFvTvOMUhHdAnMQgsHLwd0AK16NwPSF4QP8h\u002ffZ1gHhAw\u002fUoXI9deUBseHqlLER5QIxK6gQ08HhAFNBE2PCNeEAYldQJaDV4QO5aQj7oL3hACRueXilZeEAj2\u002fl+ant4QP32deCc3HhAk6mCUUnheEBmZmZmZo15QCGwcmiRcXlArrZif9m7ekA="},"type":"scatter","xaxis":"x","yaxis":"y"},{"line":{"color":"#2563eb","dash":"dot","width":1.8},"mode":"lines","name":"0700.HK GBR (Price+Sent)","x":["2026-08-10T13:18:17.892662000","2026-08-11T13:18:17.892662000","2026-08-12T13:18:17.892662000","2026-08-13T13:18:17.892662000","2026-08-14T13:18:17.892662000","2026-08-17T13:18:17.892662000","2026-08-18T13:18:17.892662000","2026-08-19T13:18:17.892662000","2026-08-20T13:18:17.892662000","2026-08-21T13:18:17.892662000","2026-08-24T13:18:17.892662000","2026-08-25T13:18:17.892662000","2026-08-26T13:18:17.892662000","2026-08-27T13:18:17.892662000","2026-08-28T13:18:17.892662000","2026-08-31T13:18:17.892662000","2026-09-01T13:18:17.892662000","2026-09-02T13:18:17.892662000","2026-09-03T13:18:17.892662000","2026-09-04T13:18:17.892662000","2026-09-07T13:18:17.892662000","2026-09-08T13:18:17.892662000","2026-09-09T13:18:17.892662000","2026-09-10T13:18:17.892662000","2026-09-11T13:18:17.892662000","2026-09-14T13:18:17.892662000","2026-09-15T13:18:17.892662000","2026-09-16T13:18:17.892662000","2026-09-17T13:18:17.892662000","2026-09-18T13:18:17.892662000","2026-09-21T13:18:17.892662000","2026-09-22T13:18:17.892662000","2026-09-23T13:18:17.892662000","2026-09-24T13:18:17.892662000","2026-09-25T13:18:17.892662000","2026-09-28T13:18:17.892662000","2026-09-29T13:18:17.892662000","2026-09-30T13:18:17.892662000","2026-10-01T13:18:17.892662000","2026-10-02T13:18:17.892662000","2026-10-05T13:18:17.892662000","2026-10-06T13:18:17.892662000","2026-10-07T13:18:17.892662000","2026-10-08T13:18:17.892662000","2026-10-09T13:18:17.892662000","2026-10-12T13:18:17.892662000","2026-10-13T13:18:17.892662000","2026-10-14T13:18:17.892662000","2026-10-15T13:18:17.892662000","2026-10-16T13:18:17.892662000","2026-10-19T13:18:17.892662000","2026-10-20T13:18:17.892662000","2026-10-21T13:18:17.892662000","2026-10-22T13:18:17.892662000","2026-10-23T13:18:17.892662000","2026-10-26T13:18:17.892662000","2026-10-27T13:18:17.892662000","2026-10-28T13:18:17.892662000","2026-10-29T13:18:17.892662000","2026-10-30T13:18:17.892662000","2026-11-02T13:18:17.892662000","2026-11-03T13:18:17.892662000","2026-11-04T13:18:17.892662000","2026-11-05T13:18:17.892662000"],"y":{"dtype":"f8","bdata":"tTf4wmRLd0Coxks3iRZ3QH2utmJ\u002funZAwaikTkAdd0D7y+7Jw6B3QMIXJlMF03dAsAPnjChKd0BlGeJYF6h3QKrx0k1in3dAirDh6ZXgd0DHKTqSy5N4QF+YTBWMKXhAJQaBlUPod0BYObTIdgB4QO2ePCzU8XdAnzws1Jo6d0Bj7lpCPoR3QE3zjlN0oXZAmG4Sg8Aod0BIv30dOH52QDSAt0CCe3dAnYAmwoYad0AU0ETY8Bl3QLaEfNCzPXdAGXPXEvK1dkDLoUW289l2QEXY8PRKZHdALbKd76fUdkCwA+eMKPh2QD81XrpJBXdAkDF3LSF6d0CF61G4HsB2QACRfvs6enZAn82qz9WJdkC6awn5oJ12QLIubqMBr3ZAJzEIrBzUdkCkcD0K17t2QGN\u002f2T15yHZAlPYGX5j2dkD\u002fsnvysJN2QC2yne+nt3dATfOOU3Sqd0DEsS5uowJ3QJp3nKIjSXdAL90kBoHndkAOvjCZKlR3QFtCPujZDHhASFD8GHNod0BMpgpGJdJ3QF66SQwCwndAOGdEaW8feECuR+F6FJt4QIEmwoans3hA16NwPQrqeEArhxbZzip4QFInoImwG3hABcWPMXe5d0AW+8vuyT14QLprCfmgO3hAi\u002f1l9+SbeEDeAgmKH3B4QNc07zhF7HhARGlv8IXseEA="},"type":"scatter","xaxis":"x","yaxis":"y"},{"line":{"color":"#94a3b8","dash":"dash","width":1.5},"mode":"lines","name":"0700.HK Naive Baseline","x":["2026-08-10T13:18:17.892662000","2026-08-11T13:18:17.892662000","2026-08-12T13:18:17.892662000","2026-08-13T13:18:17.892662000","2026-08-14T13:18:17.892662000","2026-08-17T13:18:17.892662000","2026-08-18T13:18:17.892662000","2026-08-19T13:18:17.892662000","2026-08-20T13:18:17.892662000","2026-08-21T13:18:17.892662000","2026-08-24T13:18:17.892662000","2026-08-25T13:18:17.892662000","2026-08-26T13:18:17.892662000","2026-08-27T13:18:17.892662000","2026-08-28T13:18:17.892662000","2026-08-31T13:18:17.892662000","2026-09-01T13:18:17.892662000","2026-09-02T13:18:17.892662000","2026-09-03T13:18:17.892662000","2026-09-04T13:18:17.892662000","2026-09-07T13:18:17.892662000","2026-09-08T13:18:17.892662000","2026-09-09T13:18:17.892662000","2026-09-10T13:18:17.892662000","2026-09-11T13:18:17.892662000","2026-09-14T13:18:17.892662000","2026-09-15T13:18:17.892662000","2026-09-16T13:18:17.892662000","2026-09-17T13:18:17.892662000","2026-09-18T13:18:17.892662000","2026-09-21T13:18:17.892662000","2026-09-22T13:18:17.892662000","2026-09-23T13:18:17.892662000","2026-09-24T13:18:17.892662000","2026-09-25T13:18:17.892662000","2026-09-28T13:18:17.892662000","2026-09-29T13:18:17.892662000","2026-09-30T13:18:17.892662000","2026-10-01T13:18:17.892662000","2026-10-02T13:18:17.892662000","2026-10-05T13:18:17.892662000","2026-10-06T13:18:17.892662000","2026-10-07T13:18:17.892662000","2026-10-08T13:18:17.892662000","2026-10-09T13:18:17.892662000","2026-10-12T13:18:17.892662000","2026-10-13T13:18:17.892662000","2026-10-14T13:18:17.892662000","2026-10-15T13:18:17.892662000","2026-10-16T13:18:17.892662000","2026-10-19T13:18:17.892662000","2026-10-20T13:18:17.892662000","2026-10-21T13:18:17.892662000","2026-10-22T13:18:17.892662000","2026-10-23T13:18:17.892662000","2026-10-26T13:18:17.892662000","2026-10-27T13:18:17.892662000","2026-10-28T13:18:17.892662000","2026-10-29T13:18:17.892662000","2026-10-30T13:18:17.892662000","2026-11-02T13:18:17.892662000","2026-11-03T13:18:17.892662000","2026-11-04T13:18:17.892662000","2026-11-05T13:18:17.892662000"],"y":{"dtype":"f8","bdata":"wcqhRbYnd0CMuWsJ+SZ3QNEi2\u002fl+rnZA845TdCQqd0DQRNjw9H13QMGopE5A13dAtaZ5xyl3d0ANcayL2xN4QNzXgXNGfXdAwOyePCzAd0C0WfW52rd4QJp3nKIjS3hATKYKRiUPeEDswDkjSh14QC2yne+n6HdAA3gLJChDd0B4CyQofk13QIzbaABv33ZAkzoBTYQUd0CWIY51cbZ2QGKh1jTvXXdAmnecoiMNd0CCc0aU9u12QPaX3ZOHR3dAZohjXdzHdkAZ4lgXt+J2QNobfGEycXdA0ETY8PTIdkBPHhZqTd92QF1txf6y\u002fXZAF0hQ\u002fBhUd0A\u002fxty1hNN2QIXrUbgeTXZA3nGKjuSFdkAEVg4tsqd2QOJYF7fRxHZA8KfGSzfsdkB4nKIjuad2QLUV+8vuwnZA9GxWfa7kdkBdbcX+spx2QBPyQc9mZXdAJCh+jLmbd0AFxY8xdx53QOJYF7fRZ3dAFmpN844Cd0CU9gZfmFl3QAKaCBue2ndAW9O84xSEd0CcxCCwcvB3QArXo3A9IXhA\u002fyH99nWAeEDD9Shcj115QGx4eqUsRHlAjErqBDTweEAU0ETY8I14QBiV1AloNXhA7lpCPugveEAJG55eKVl4QCPb+X5qe3hA\u002ffZ14JzceECTqYJRSeF4QGZmZmZmjXlAIbByaJFxeUA="},"type":"scatter","xaxis":"x","yaxis":"y"},{"line":{"color":"#0f172a","width":2},"mode":"lines+markers","name":"005930.KS Actual","x":["2026-08-10T13:18:17.892662000","2026-08-11T13:18:17.892662000","2026-08-12T13:18:17.892662000","2026-08-13T13:18:17.892662000","2026-08-14T13:18:17.892662000","2026-08-17T13:18:17.892662000","2026-08-18T13:18:17.892662000","2026-08-19T13:18:17.892662000","2026-08-20T13:18:17.892662000","2026-08-21T13:18:17.892662000","2026-08-24T13:18:17.892662000","2026-08-25T13:18:17.892662000","2026-08-26T13:18:17.892662000","2026-08-27T13:18:17.892662000","2026-08-28T13:18:17.892662000","2026-08-31T13:18:17.892662000","2026-09-01T13:18:17.892662000","2026-09-02T13:18:17.892662000","2026-09-03T13:18:17.892662000","2026-09-04T13:18:17.892662000","2026-09-07T13:18:17.892662000","2026-09-08T13:18:17.892662000","2026-09-09T13:18:17.892662000","2026-09-10T13:18:17.892662000","2026-09-11T13:18:17.892662000","2026-09-14T13:18:17.892662000","2026-09-15T13:18:17.892662000","2026-09-16T13:18:17.892662000","2026-09-17T13:18:17.892662000","2026-09-18T13:18:17.892662000","2026-09-21T13:18:17.892662000","2026-09-22T13:18:17.892662000","2026-09-23T13:18:17.892662000","2026-09-24T13:18:17.892662000","2026-09-25T13:18:17.892662000","2026-09-28T13:18:17.892662000","2026-09-29T13:18:17.892662000","2026-09-30T13:18:17.892662000","2026-10-01T13:18:17.892662000","2026-10-02T13:18:17.892662000","2026-10-05T13:18:17.892662000","2026-10-06T13:18:17.892662000","2026-10-07T13:18:17.892662000","2026-10-08T13:18:17.892662000","2026-10-09T13:18:17.892662000","2026-10-12T13:18:17.892662000","2026-10-13T13:18:17.892662000","2026-10-14T13:18:17.892662000","2026-10-15T13:18:17.892662000","2026-10-16T13:18:17.892662000","2026-10-19T13:18:17.892662000","2026-10-20T13:18:17.892662000","2026-10-21T13:18:17.892662000","2026-10-22T13:18:17.892662000","2026-10-23T13:18:17.892662000","2026-10-26T13:18:17.892662000","2026-10-27T13:18:17.892662000","2026-10-28T13:18:17.892662000","2026-10-29T13:18:17.892662000","2026-10-30T13:18:17.892662000","2026-11-02T13:18:17.892662000","2026-11-03T13:18:17.892662000","2026-11-04T13:18:17.892662000","2026-11-05T13:18:17.892662000"],"y":{"dtype":"f8","bdata":"mEwVDAKiCkELJCh+DbUKQX9qvHRCqQpB5j+k3yo2CkGGWtO85T0KQbG\u002f7B5eWApB4JwRJW9KC0Gfq61Y6vsKQTBMporzLQpBx7q4DeOzCUHhC5MpP04JQTvfT43eHwlBeJyiowCrCEEX2c53WgwJQfT91Hj3jwhB\u002f7J78mCVCEEW+8tuWn8JQUa28\u002f0DxAlBa5p3nBP9CUE2PL1Ss+IKQZoIGx5JggtBtvP9VNjNC0GitDd4r6kLQWrecYpVqgtBApoIm8mkC0GJQWDlWXULQQK8BZLCkwtBPE7RkQbEC0FQjZduByoLQelILn\u002ft\u002fAtBGCZThZU1DEESpb3BGRcMQcx\u002fSL9lNwxB4QuTqQ61DEEhH\u002fRsKPkLQRfZzvcz7wtBdy0hH61bC0HhehSucrYMQQpoImxwzAxBat5xCmc1DEFSuB6FnxwOQX9qvHRs1g1BcvkPaYm9DUH99nVgnK4NQf32dWBBPw1BV1uxP21kDUE9LNQagEIMQayt2N\u002f81AxBswxxLEdEDEHrc7WV+REMQZ7vp0Z8dwxBXrpJjFhgDEGTqYJRnU4MQTLmrqVazwtBg8DKIbzkDEET8kFPki8NQafoSC4GowxBeViotUC+DEGF61E4qCoMQV66SQxvEQ1BpgpGJfUvDUEXt9GAkbEMQRiV1AkbEg1B\u002fKnx0qbwDEE="},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"line":{"color":"#2563eb","dash":"dot","width":1.8},"mode":"lines","name":"005930.KS GBR (Price+Sent)","x":["2026-08-10T13:18:17.892662000","2026-08-11T13:18:17.892662000","2026-08-12T13:18:17.892662000","2026-08-13T13:18:17.892662000","2026-08-14T13:18:17.892662000","2026-08-17T13:18:17.892662000","2026-08-18T13:18:17.892662000","2026-08-19T13:18:17.892662000","2026-08-20T13:18:17.892662000","2026-08-21T13:18:17.892662000","2026-08-24T13:18:17.892662000","2026-08-25T13:18:17.892662000","2026-08-26T13:18:17.892662000","2026-08-27T13:18:17.892662000","2026-08-28T13:18:17.892662000","2026-08-31T13:18:17.892662000","2026-09-01T13:18:17.892662000","2026-09-02T13:18:17.892662000","2026-09-03T13:18:17.892662000","2026-09-04T13:18:17.892662000","2026-09-07T13:18:17.892662000","2026-09-08T13:18:17.892662000","2026-09-09T13:18:17.892662000","2026-09-10T13:18:17.892662000","2026-09-11T13:18:17.892662000","2026-09-14T13:18:17.892662000","2026-09-15T13:18:17.892662000","2026-09-16T13:18:17.892662000","2026-09-17T13:18:17.892662000","2026-09-18T13:18:17.892662000","2026-09-21T13:18:17.892662000","2026-09-22T13:18:17.892662000","2026-09-23T13:18:17.892662000","2026-09-24T13:18:17.892662000","2026-09-25T13:18:17.892662000","2026-09-28T13:18:17.892662000","2026-09-29T13:18:17.892662000","2026-09-30T13:18:17.892662000","2026-10-01T13:18:17.892662000","2026-10-02T13:18:17.892662000","2026-10-05T13:18:17.892662000","2026-10-06T13:18:17.892662000","2026-10-07T13:18:17.892662000","2026-10-08T13:18:17.892662000","2026-10-09T13:18:17.892662000","2026-10-12T13:18:17.892662000","2026-10-13T13:18:17.892662000","2026-10-14T13:18:17.892662000","2026-10-15T13:18:17.892662000","2026-10-16T13:18:17.892662000","2026-10-19T13:18:17.892662000","2026-10-20T13:18:17.892662000","2026-10-21T13:18:17.892662000","2026-10-22T13:18:17.892662000","2026-10-23T13:18:17.892662000","2026-10-26T13:18:17.892662000","2026-10-27T13:18:17.892662000","2026-10-28T13:18:17.892662000","2026-10-29T13:18:17.892662000","2026-10-30T13:18:17.892662000","2026-11-02T13:18:17.892662000","2026-11-03T13:18:17.892662000","2026-11-04T13:18:17.892662000","2026-11-05T13:18:17.892662000"],"y":{"dtype":"f8","bdata":"UiegCUwDC0FqTfMO5rgKQd6Th4WWhApBj1N0pCp4CkEgQfFjZwEKQWwJ+aAnRQpBp+hIruQsCkEnMQiso5YLQQfOGVF2zgpBJ8KGJw60CUHM7snD+pEJQRsN4C2XLAlBgnNGFJcSCUEDeAskcJkIQfkP6TeZAQlBBoGVwx+BCEH7XG1FsKMIQcsQxzpZcglBI0p7g1juCUGsrdjf6cwJQXctIR9BQgtBbqMBPKeOC0H35GGh8QAMQfLSTWJhigtBqFfKMgydC0Gu2F\u002f2d6oLQcoyxLHFuQtB8rBQa1wCDEHoait2+jcMQdEi2\u002flgJAtBf2q8dN8CDEFQ\u002fBjzt0UMQfhT4yVy6QtBescpungqDEHJdr4fS9IMQUmdgKay3gtB4L4OnMfUC0GF61E4ogMLQQIrhxZT0QxBpU5AE8OwDEGTqYJR+\u002fMLQaK0N3iwHg5BPzVeOiiwDUHEQq3p4gsOQTxO0ZG1fA1BAiuHltYJDUEvbqMBhYoNQQ+cM6LoNAxB48eYOxJIDUEWak1zh2sMQbWmeUfiKAxBqz5XW1JnDEG0yHa+hIYMQfXb1wG9RQxBOPjC5FbOC0FrK\u002fYXmVQNQXzysNA8aA1BMnctIVLBDEGwA+cMOuoMQZ88LFTmBwxB\u002ffZ14JUkDUEy5q4lt0QNQVK4HoUJywxB1CtlGdMjDUE="},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"line":{"color":"#94a3b8","dash":"dash","width":1.5},"mode":"lines","name":"005930.KS Naive Baseline","x":["2026-08-10T13:18:17.892662000","2026-08-11T13:18:17.892662000","2026-08-12T13:18:17.892662000","2026-08-13T13:18:17.892662000","2026-08-14T13:18:17.892662000","2026-08-17T13:18:17.892662000","2026-08-18T13:18:17.892662000","2026-08-19T13:18:17.892662000","2026-08-20T13:18:17.892662000","2026-08-21T13:18:17.892662000","2026-08-24T13:18:17.892662000","2026-08-25T13:18:17.892662000","2026-08-26T13:18:17.892662000","2026-08-27T13:18:17.892662000","2026-08-28T13:18:17.892662000","2026-08-31T13:18:17.892662000","2026-09-01T13:18:17.892662000","2026-09-02T13:18:17.892662000","2026-09-03T13:18:17.892662000","2026-09-04T13:18:17.892662000","2026-09-07T13:18:17.892662000","2026-09-08T13:18:17.892662000","2026-09-09T13:18:17.892662000","2026-09-10T13:18:17.892662000","2026-09-11T13:18:17.892662000","2026-09-14T13:18:17.892662000","2026-09-15T13:18:17.892662000","2026-09-16T13:18:17.892662000","2026-09-17T13:18:17.892662000","2026-09-18T13:18:17.892662000","2026-09-21T13:18:17.892662000","2026-09-22T13:18:17.892662000","2026-09-23T13:18:17.892662000","2026-09-24T13:18:17.892662000","2026-09-25T13:18:17.892662000","2026-09-28T13:18:17.892662000","2026-09-29T13:18:17.892662000","2026-09-30T13:18:17.892662000","2026-10-01T13:18:17.892662000","2026-10-02T13:18:17.892662000","2026-10-05T13:18:17.892662000","2026-10-06T13:18:17.892662000","2026-10-07T13:18:17.892662000","2026-10-08T13:18:17.892662000","2026-10-09T13:18:17.892662000","2026-10-12T13:18:17.892662000","2026-10-13T13:18:17.892662000","2026-10-14T13:18:17.892662000","2026-10-15T13:18:17.892662000","2026-10-16T13:18:17.892662000","2026-10-19T13:18:17.892662000","2026-10-20T13:18:17.892662000","2026-10-21T13:18:17.892662000","2026-10-22T13:18:17.892662000","2026-10-23T13:18:17.892662000","2026-10-26T13:18:17.892662000","2026-10-27T13:18:17.892662000","2026-10-28T13:18:17.892662000","2026-10-29T13:18:17.892662000","2026-10-30T13:18:17.892662000","2026-11-02T13:18:17.892662000","2026-11-03T13:18:17.892662000","2026-11-04T13:18:17.892662000","2026-11-05T13:18:17.892662000"],"y":{"dtype":"f8","bdata":"16NwvRQEC0GYTBUMAqIKQQskKH4NtQpBf2q8dEKpCkHmP6TfKjYKQYZa07zlPQpBsb\u002fsHl5YCkHgnBElb0oLQZ+rrVjq+wpBMEymivMtCkHHurgN47MJQeELkyk\u002fTglBO99Pjd4fCUF4nKKjAKsIQRfZzndaDAlB9P3UePePCEH\u002fsnvyYJUIQRb7y25afwlBRrbz\u002fQPECUFrmnecE\u002f0JQTY8vVKz4gpBmggbHkmCC0G28\u002f1U2M0LQaK0N3ivqQtBat5xilWqC0ECmgibyaQLQYlBYOVZdQtBArwFksKTC0E8TtGRBsQLQVCNl24HKgtB6Uguf+38C0EYJlOFlTUMQRKlvcEZFwxBzH9Iv2U3DEHhC5OpDrUMQSEf9Gwo+QtBF9nO9zPvC0F3LSEfrVsLQeF6FK5ytgxBCmgibHDMDEFq3nEKZzUMQVK4HoWfHA5Bf2q8dGzWDUFy+Q9pib0NQf32dWCcrg1B\u002ffZ1YEE\u002fDUFXW7E\u002fbWQNQT0s1BqAQgxBrK3Y3\u002fzUDEGzDHEsR0QMQetztZX5EQxBnu+nRnx3DEFeukmMWGAMQZOpglGdTgxBMuaupVrPC0GDwMohvOQMQRPyQU+SLw1Bp+hILgajDEF5WKi1QL4MQYXrUTioKgxBXrpJDG8RDUGmCkYl9S8NQRe30YCRsQxBGJXUCRsSDUE="},"type":"scatter","xaxis":"x2","yaxis":"y2"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,0.45]},"yaxis":{"anchor":"x","domain":[0.0,1.0]},"xaxis2":{"anchor":"y2","domain":[0.55,1.0]},"yaxis2":{"anchor":"x2","domain":[0.0,1.0]},"annotations":[{"font":{"size":16},"showarrow":false,"text":"0700.HK (Tencent) Walk-Forward Predictions","x":0.225,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"005930.KS (Samsung) Walk-Forward Predictions","x":0.775,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"}],"margin":{"l":40,"r":40,"t":50,"b":40},"height":420,"plot_bgcolor":"#f8fafc","paper_bgcolor":"#ffffff","showlegend":true},                        {"responsive": true}                    )                };            </script>        </div>
+        </div>
+
+        <!-- Model Ablation & Results -->
+        <div class="card">
+            <h2>4. Rigorous Out-of-Sample Performance & Ablation Analysis</h2>
+            <div class="callout-box">
+                <b>Honest Evaluation Standard:</b> A 10-day social sentiment dataset provides high-frequency retail sentiment, but mega-cap price formation is largely dominated by institutional flows and macro news. Models must beat the Martingale Naive Baseline (R_(t+1) = 0) to prove statistical value.
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ticker</th>
+                        <th>Naive Baseline RMSE</th>
+                        <th>Price-Only GBR (Hit %)</th>
+                        <th>Price + Sentiment GBR (Hit %)</th>
+                        <th>95% Wilson CI (Hit Rate)</th>
+                        <th>Ablation Status</th>
+                        <th>Engineering Commentary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr>
+            <td><b>0700.HK</b></td>
+            <td>6.83</td>
+            <td>8.18 (45.3%)</td>
+            <td><b>8.30</b> (46.9%)</td>
+            <td>[35.2%, 58.9%]</td>
+            <td><span class="badge" style="background: #f1f5f9; color: #0f172a;">⚠️ Neutral/Par</span></td>
+            <td style="font-size: 0.85rem; color: #475569;">Sentiment signals added residual noise over short window; technical price action dominated predictive variance.</td>
+        </tr>
+        
+
+        <tr>
+            <td><b>9988.HK</b></td>
+            <td>2.32</td>
+            <td>2.77 (45.3%)</td>
+            <td><b>2.79</b> (50.0%)</td>
+            <td>[38.1%, 61.9%]</td>
+            <td><span class="badge" style="background: #f1f5f9; color: #0f172a;">⚠️ Neutral/Par</span></td>
+            <td style="font-size: 0.85rem; color: #475569;">Sentiment signals added residual noise over short window; technical price action dominated predictive variance.</td>
+        </tr>
+        
+
+        <tr>
+            <td><b>1810.HK</b></td>
+            <td>0.52</td>
+            <td>0.59 (48.4%)</td>
+            <td><b>0.59</b> (48.4%)</td>
+            <td>[36.6%, 60.4%]</td>
+            <td><span class="badge" style="background: #f1f5f9; color: #0f172a;">✅ Improved</span></td>
+            <td style="font-size: 0.85rem; color: #475569;">Sentiment marginally lowered RMSE and enhanced directional fidelity.</td>
+        </tr>
+        
+
+        <tr>
+            <td><b>3690.HK</b></td>
+            <td>2.54</td>
+            <td>3.11 (54.7%)</td>
+            <td><b>3.15</b> (56.2%)</td>
+            <td>[44.1%, 67.7%]</td>
+            <td><span class="badge" style="background: #f1f5f9; color: #0f172a;">⚠️ Neutral/Par</span></td>
+            <td style="font-size: 0.85rem; color: #475569;">Sentiment signals added residual noise over short window; technical price action dominated predictive variance.</td>
+        </tr>
+        
+
+        <tr>
+            <td><b>0005.HK</b></td>
+            <td>1.05</td>
+            <td>1.16 (43.8%)</td>
+            <td><b>1.16</b> (42.2%)</td>
+            <td>[30.9%, 54.4%]</td>
+            <td><span class="badge" style="background: #f1f5f9; color: #0f172a;">⚠️ Neutral/Par</span></td>
+            <td style="font-size: 0.85rem; color: #475569;">Sentiment signals added residual noise over short window; technical price action dominated predictive variance.</td>
+        </tr>
+        
+
+        <tr>
+            <td><b>005930.KS</b></td>
+            <td>4,488.87</td>
+            <td>5,058.88 (48.4%)</td>
+            <td><b>5,034.16</b> (50.0%)</td>
+            <td>[38.1%, 61.9%]</td>
+            <td><span class="badge" style="background: #f1f5f9; color: #0f172a;">✅ Improved</span></td>
+            <td style="font-size: 0.85rem; color: #475569;">Sentiment marginally lowered RMSE and enhanced directional fidelity.</td>
+        </tr>
+        
+
+        <tr>
+            <td><b>000660.KS</b></td>
+            <td>2,905.03</td>
+            <td>3,788.35 (29.7%)</td>
+            <td><b>3,825.75</b> (29.7%)</td>
+            <td>[19.9%, 41.8%]</td>
+            <td><span class="badge" style="background: #f1f5f9; color: #0f172a;">⚠️ Neutral/Par</span></td>
+            <td style="font-size: 0.85rem; color: #475569;">Sentiment signals added residual noise over short window; technical price action dominated predictive variance.</td>
+        </tr>
+        
+
+        <tr>
+            <td><b>035420.KS</b></td>
+            <td>2,680.93</td>
+            <td>2,785.93 (50.0%)</td>
+            <td><b>2,820.33</b> (50.0%)</td>
+            <td>[38.1%, 61.9%]</td>
+            <td><span class="badge" style="background: #f1f5f9; color: #0f172a;">⚠️ Neutral/Par</span></td>
+            <td style="font-size: 0.85rem; color: #475569;">Sentiment signals added residual noise over short window; technical price action dominated predictive variance.</td>
+        </tr>
+        
+
+        <tr>
+            <td><b>035720.KS</b></td>
+            <td>584.31</td>
+            <td>663.36 (53.1%)</td>
+            <td><b>663.95</b> (53.1%)</td>
+            <td>[41.1%, 64.8%]</td>
+            <td><span class="badge" style="background: #f1f5f9; color: #0f172a;">⚠️ Neutral/Par</span></td>
+            <td style="font-size: 0.85rem; color: #475569;">Sentiment signals added residual noise over short window; technical price action dominated predictive variance.</td>
+        </tr>
+        
+
+        <tr>
+            <td><b>373220.KS</b></td>
+            <td>6,626.43</td>
+            <td>7,062.50 (42.2%)</td>
+            <td><b>7,082.69</b> (43.8%)</td>
+            <td>[32.3%, 55.9%]</td>
+            <td><span class="badge" style="background: #f1f5f9; color: #0f172a;">⚠️ Neutral/Par</span></td>
+            <td style="font-size: 0.85rem; color: #475569;">Sentiment signals added residual noise over short window; technical price action dominated predictive variance.</td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Influential Social Discussions -->
+        <div class="card">
+            <h2>5. High-Engagement Retail Discussion Intelligence</h2>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">Top weighted social posts across Cantonese, Korean, and English communities.</p>
+            <div class="grid-2">
+                
+            <div class="card post-card">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <b>0700.HK &bull; LIHKG</b>
+                    <small style="color: #64748b;">Likes: 60 | Views: 2100</small>
+                </div>
+                <p style="font-size: 0.9rem; color: #1e293b; margin: 0.2rem 0;">"企鵝 0700 準備破位，大行摩通升目標價至 460 元，強烈看好"</p>
+                <div style="font-size: 0.8rem; color: #475569; margin-top: 0.4rem;">
+                    Score: <b>+1.00</b> &bull; Weight: <b>6.33x</b>
+                </div>
+            </div>
+            
+
+            <div class="card post-card">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <b>1810.HK &bull; LIHKG</b>
+                    <small style="color: #64748b;">Likes: 95 | Views: 3400</small>
+                </div>
+                <p style="font-size: 0.9rem; color: #1e293b; margin: 0.2rem 0;">"小米 (1810) SU7 Ultra 訂單爆棚，雷軍真係神，小米汽車估值要重估！沖 32！"</p>
+                <div style="font-size: 0.8rem; color: #475569; margin-top: 0.4rem;">
+                    Score: <b>+0.00</b> &bull; Weight: <b>6.82x</b>
+                </div>
+            </div>
+            
+
+            <div class="card post-card">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <b>3690.HK &bull; LIHKG</b>
+                    <small style="color: #64748b;">Likes: 41 | Views: 1340</small>
+                </div>
+                <p style="font-size: 0.9rem; color: #1e293b; margin: 0.2rem 0;">"美團 145 跌唔落，雙底成型，目標反彈 165"</p>
+                <div style="font-size: 0.8rem; color: #475569; margin-top: 0.4rem;">
+                    Score: <b>-1.00</b> &bull; Weight: <b>5.92x</b>
+                </div>
+            </div>
+            
+
+            <div class="card post-card">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <b>0005.HK &bull; LIHKG</b>
+                    <small style="color: #64748b;">Likes: 42 | Views: 1290</small>
+                </div>
+                <p style="font-size: 0.9rem; color: #1e293b; margin: 0.2rem 0;">"滙豐 (0005) 宣佈架構重組，簡化營運節省成本，大笨象起飛！"</p>
+                <div style="font-size: 0.8rem; color: #475569; margin-top: 0.4rem;">
+                    Score: <b>+1.00</b> &bull; Weight: <b>5.88x</b>
+                </div>
+            </div>
+            
+
+            <div class="card post-card">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <b>9988.HK &bull; LIHKG</b>
+                    <small style="color: #64748b;">Likes: 38 | Views: 1150</small>
+                </div>
+                <p style="font-size: 0.9rem; color: #1e293b; margin: 0.2rem 0;">"阿里巴巴 (9988) 雲端業務分拆與 AI 晶片佈局，現價 85 估值極具吸引力"</p>
+                <div style="font-size: 0.8rem; color: #475569; margin-top: 0.4rem;">
+                    Score: <b>+0.00</b> &bull; Weight: <b>5.77x</b>
+                </div>
+            </div>
+            
+
+            <div class="card post-card">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <b>373220.KS &bull; NAVER_FINANCE</b>
+                    <small style="color: #64748b;">Likes: 85 | Views: 3100</small>
+                </div>
+                <p style="font-size: 0.9rem; color: #1e293b; margin: 0.2rem 0;">"LG에너지솔루션 (373220) 미국 IRA 보조금 수혜 확대 및 벤츠 등 대규모 수주 릴레이"</p>
+                <div style="font-size: 0.8rem; color: #475569; margin-top: 0.4rem;">
+                    Score: <b>+1.00</b> &bull; Weight: <b>6.69x</b>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; color: var(--text-muted); font-size: 0.85rem; padding: 1.5rem 0;">
+            Sentiment Price Prediction Agent &bull; CrowdWisdomTrading AI Agents Intern Assessment &bull; Candidate: Shaik Afrid
+        </div>
+    </div>
+</body>
+</html>

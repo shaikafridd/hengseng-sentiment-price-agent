@@ -86,7 +86,14 @@ def build_all_reports(use_sample: bool = True) -> None:
     pdf_path = config.reports_dir / "report.pdf"
     generate_pdf_report(extractions, metrics_data, output_path=pdf_path)
 
-    logger.info("Report generation complete: %s and %s", html_path, pdf_path)
+    # 5. Mirror to docs/ for instant GitHub Pages deployment
+    docs_dir = config.base_dir / "docs"
+    docs_dir.mkdir(parents=True, exist_ok=True)
+    import shutil
+    shutil.copy2(html_path, docs_dir / "index.html")
+    shutil.copy2(pdf_path, docs_dir / "report.pdf")
+
+    logger.info("Report generation complete: %s, %s, and docs/ (GitHub Pages ready)", html_path, pdf_path)
 
 
 if __name__ == "__main__":

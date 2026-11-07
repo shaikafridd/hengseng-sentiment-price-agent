@@ -5,11 +5,13 @@
 [![Code Style: Ruff/Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Tests: Pytest](https://img.shields.io/badge/tests-24%20passed-brightgreen.svg)](https://pytest.org)
 [![Validation: Zero--Leakage](https://img.shields.io/badge/validation-walk--forward%20(zero--leakage)-success.svg)](#anti-leakage-guarantees)
+[![Live Interactive Dashboard](https://img.shields.io/badge/Live%20Dashboard-GitHub%20Pages-blue.svg)](#live-interactive-dashboard)
 
 > **Assessment Submission:** AI Agents Developer Internship — CrowdWisdomTrading  
 > **Candidate:** Shaik Afrid ([LinkedIn Profile](https://www.linkedin.com/in/shaik-afrid-707656365))  
 > **Evaluator:** Gilad (`gilad@crowdwisdomtrading.com`)  
-> **Hard Deadline:** 13 November 2026 (Submitted Ahead of Schedule)
+> **Hard Deadline:** 13 November 2026 (Submitted Ahead of Schedule)  
+> **Live Dashboard:** [View Interactive Plotly Report](https://YOUR_GITHUB_USERNAME.github.io/hengseng-sentiment-price-agent/)
 
 ---
 
@@ -238,9 +240,10 @@ Hi Gilad,
 Please find my submission for the trading sentiment agent assessment (also submitted via Internshala, if applicable).
 
 1. Repository: <GITHUB_REPO_LINK>
-2. Apify token (free tier, dedicated): <APIFY_TOKEN>
+2. Live Interactive Report (Plotly): https://<YOUR_GITHUB_USERNAME>.github.io/hengseng-sentiment-price-agent/
+3. Apify token (free tier, dedicated): <APIFY_TOKEN>
    Actor IDs used: claude_code_reviewer/lihkg-scraper (LIHKG), apify/cheerio-scraper (AAStocks & Naver Toronsil), curious_coder/telegram-scraper (Telegram). Custom actors also included in /actors.
-3. Exa API key (free tier, dedicated): <EXA_API_KEY>
+4. Exa API key (free tier, dedicated): <EXA_API_KEY>
 
 Coverage: HKEX (5 tickers: 0700.HK, 9988.HK, 1810.HK, 3690.HK, 0005.HK) using LIHKG + AAStocks; KRX (5 tickers: 005930.KS, 000660.KS, 035420.KS, 035720.KS, 373220.KS) using Naver Finance Toronsil + Telegram; Exa news for all assets.
 How to run: see README (python run.py demo for a no-key demo; python run.py all for the full pipeline).
