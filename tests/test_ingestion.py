@@ -64,11 +64,11 @@ def test_apify_client_graceful_missing_token(tmp_path):
 def test_exa_client_graceful_missing_key(tmp_path):
     """Verify ExaNewsClient does not crash when EXA_API_KEY is not configured."""
     store = RawDataStore(base_dir=tmp_path)
-    client = ExaNewsClient(api_key=None, data_store=store)
+    client = ExaNewsClient(api_key="", data_store=store)
 
     asset = config.get_asset_by_ticker("005930.KS")
     assert asset is not None
 
-    news = client.fetch_news_for_asset(asset)
+    news = client.fetch_news_for_asset(asset, force_refresh=True)
     assert isinstance(news, list)
     assert len(news) == 0

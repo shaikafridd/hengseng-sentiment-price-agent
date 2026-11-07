@@ -17,7 +17,7 @@ class ExaNewsClient:
     """Client for querying curated financial news using Exa AI's semantic search API."""
 
     def __init__(self, api_key: Optional[str] = None, data_store: Optional[RawDataStore] = None):
-        self.api_key = api_key or config.exa_api_key
+        self.api_key = api_key if api_key is not None else config.exa_api_key
         self.endpoint = "https://api.exa.ai/search"
         self.store = data_store or RawDataStore()
 
